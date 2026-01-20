@@ -1,0 +1,25 @@
+services:
+  whatsapp-bot:
+    build: .
+    container_name: wpvdbot
+    volumes:
+      # Persist authentication data
+      - ./bot_auth:/app/.wwebjs_auth
+      # Persist backups
+      - ./backups:/app/backups
+      # Persist logs
+      - ./logs:/app/logs
+      # Persist videos
+      - ./videos:/app/videos
+    environment:
+      # Set your owner/admin JID here
+      - OWNER_JID=${OWNER_JID:-}
+      - ADMIN_JIDS=${ADMIN_JIDS:-}
+      - CHROME_BIN=/usr/bin/chromium-browser
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    # Uncomment if you need to access bot from host machine
+    # ports:
+    #   - "3000:3000"

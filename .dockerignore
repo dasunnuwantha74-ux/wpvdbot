@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+LICENSE
+SETUP.md
+MIGRATION.md
+.env.example
+.wwebjs_auth
+backups
+logs
+videos
+.DS_Store
+*.log
+test-features.js

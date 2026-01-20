@@ -13,8 +13,9 @@ module.exports = {
       min_uptime: '10s',
       env: {
         NODE_ENV: 'production',
-        CHROME_BIN: '/usr/bin/chromium-browser',
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+        CHROME_BIN: '/usr/bin/chromium',
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true',
+        PUPPETEER_EXECUTABLE_PATH: '/usr/bin/chromium'
       },
       error_file: './logs/err.log',
       out_file: './logs/out.log',

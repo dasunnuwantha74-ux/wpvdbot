@@ -15,8 +15,9 @@ services:
       # Set your owner/admin JID here
       - OWNER_JID=${OWNER_JID:-}
       - ADMIN_JIDS=${ADMIN_JIDS:-}
-      - CHROME_BIN=/usr/bin/chromium-browser
+      - CHROME_BIN=/usr/bin/chromium
       - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+      - PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
     restart: unless-stopped
     stdin_open: true
     tty: true

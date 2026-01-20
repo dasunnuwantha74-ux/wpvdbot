@@ -2,28 +2,33 @@ FROM node:18-bullseye
 
 # Install Chrome and other dependencies
 RUN apt-get update && apt-get install -y \
-    chromium-browser \
+    chromium \
+    chromium-sandbox \
     ca-certificates \
-    libgtk-3-0 \
-    libnotify-dev \
-    libgconf-2-4 \
-    libnss3 \
-    libxss1 \
-    libasound2 \
-    libappindicator1 \
-    libindicator7 \
-    xdg-utils \
     fonts-liberation \
     libappindicator3-1 \
-    libcurl4 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libatk1.0-0 \
+    libcups2 \
+    libdbus-1-3 \
+    libgdk-pixbuf2.0-0 \
+    libnspr4 \
+    libnss3 \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    xdg-utils \
     wget \
     ffmpeg \
     python3 \
     && rm -rf /var/lib/apt/lists/*
 
 # Set Chromium path
-ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_BIN=/usr/bin/chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 WORKDIR /app
 
